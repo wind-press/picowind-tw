@@ -1,0 +1,64 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<main class="min-h-screen flex items-center justify-center bg-base-100">
+		<div class="hero">
+			<div class="hero-content text-center">
+				<div
+					class="max-w-2xl">
+					{# 404 SVG Illustration #}
+					<div class="mb-8">
+                        <canvas id="lottie-canvas" width="1200" height="1200" class="w-96 h-auto mx-auto"></canvas>
+					</div>
+
+					{# Error Message #}
+					<h1 class="text-6xl font-bold mb-6">
+						{{ __('Page not found', 'picowind-tw') }}
+					</h1>
+
+					<p class="text-xl text-base-content/70 mb-8">
+						{{ __('Perhaps you would like to go to our home page?', 'picowind-tw') }}
+					</p>
+
+					{# Action Buttons #}
+					<div class="flex gap-4 justify-center flex-wrap">
+						<a href="{{ site.url }}" class="btn btn-primary btn-lg gap-2">
+							{{ ux_icon("lucide:home", {class: "w-5 h-5"}) }}
+							{{ __('Go to home', 'picowind-tw') }}
+						</a>
+
+						<a href="javascript:history.back()" class="btn btn-ghost btn-lg gap-2">
+							{{ ux_icon("lucide:arrow-left", {class: "w-5 h-5"}) }}
+							{{ __('Go back', 'picowind-tw') }}
+						</a>
+					</div>
+
+					{# Optional: Search box #}
+					<div class="mt-12">
+						<div class="divider">{{ __('Or search for something', 'picowind-tw') }}</div>
+						<form action="{{ site.url }}" method="get" class="join w-full max-w-md mx-auto">
+							<input type="text" name="s" placeholder="{{ __('Search...', 'picowind-tw') }}" class="input input-bordered join-item flex-1"/>
+							<button type="submit" class="btn btn-primary join-item">
+								{{ ux_icon("lucide:search", {class: "w-5 h-5"}) }}
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+    <script type="module">
+        import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
+
+        new DotLottie({
+            autoplay: true,
+            loop: true,
+            canvas: document.getElementById("lottie-canvas"),
+            // src: "https://lottie.host/4db68bbd-31f6-4cd8-84eb-189de081159a/IGmMCqhzpt.lottie", // or .json file
+            src: "{{ theme.link }}/public/animations/404.lottie", // or .json file
+        });
+    </script>
+
+{% endblock %}

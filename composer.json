@@ -1,0 +1,27 @@
+{
+    "name": "livecanvas-team/picowind-tw",
+    "type": "wordpress-theme",
+    "description": "The Tailwind CSS-based child theme for Picowind",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "The LiveCanvas Team"
+        },
+        {
+            "name": "The WindPress Team"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Picowind\\Child\\Tw\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
