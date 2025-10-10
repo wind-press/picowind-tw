@@ -49,4 +49,10 @@ class ThemeMod
 
         return $context;
     }
+
+    #[Hook('f!picostrap/compat/optin:lightbox', type: 'filter', priority: 20)]
+    public function enable_lightbox_feature(bool $enabled): bool
+    {
+        return true;
+    }
 }

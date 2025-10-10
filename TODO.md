@@ -43,8 +43,8 @@ see https://picostrap.com/
 - [ ] Blank Child Theme Provided ❌ (not needed, this is already a child theme, and safe to modify)
 - [ ] Sharing Buttons [OPT-IN] - WIP
 - [ ] TopBar [OPT-IN]
-- [ ] Lightbox
-- [ ] Prefetch CSS
+- [x] Lightbox
+- [x] Prefetch CSS ❌ (Not relevant with current adoption)
 - [x] Dark Mode ✅ (via DaisyUI)
 
 ===
