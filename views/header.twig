@@ -1,19 +1,14 @@
 {% do action('wp_body_open') %}
 
-{# Custom filter to check if header elements should be displayed. To disable, use: add_filter('picowind_enable_header_elements', '__return_false'); #}
-{# {% if true|apply_filters('picowind_enable_header_elements') %} #}
+{# Custom filter to check if header elements should be displayed. #}
 {% if theme.mods.enable_header_elements|default(true) %}
 	{% if function_exists('lc_custom_header') %}
 		{# use the LiveCanvas Custom Header #}
 		{{ function('lc_custom_header') }}
 	{% else %}
             {# use the built-in theme header elements  #}
-            {# get_template_part( 'partials/header', 'optional-topbar' );  #}
-            {# get_template_part( 'partials/header', 'navbar' ); #}
-
 			{% include 'partials/header-optional-topbar.twig' %}
 			{% include 'partials/header-navbar.twig' %}
-	
 	{% endif %}
 {% endif %}
 

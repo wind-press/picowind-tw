@@ -27,6 +27,26 @@ In the initial phase, the focus will be on adapting picostrap5 template files an
 - [x] page-templates/page-sidebar-right.php - Page with right sidebar
 - [x] page-templates/bootstrap-demo.php -> will be replaced with DaisyUI 5 demo (page-templates/daisyui-demo.php)
 
+## Features to adapt from Picostrap5
+
+see https://picostrap.com/
+
+- [x] Instantly Customize Colors ❌ (replaced by Tailwind CSS + DaisyUI)
+- [x] Built-in SCSS compiler ❌ (replaced by Tailwind CSS + DaisyUI)
+- [x] Beautiful Font Combos ✅ (via Yabe Webfont plugin)
+- [x] Set your own variables ❌ (use theme's style.css or dedicated snippet plugin)
+- [x] Add your own CSS/SCSS code ❌ (use theme's style.css or dedicated snippet plugin)
+- [x] Responsive Typography ❌ (replaced by Tailwind CSS + DaisyUI)
+- [ ] Hide unnecessary tags
+- [ ] Disable Comments
+- [x] Keeps your head clean
+- [ ] Blank Child Theme Provided ❌ (not needed, this is already a child theme, and safe to modify)
+- [ ] Sharing Buttons [OPT-IN] - WIP
+- [ ] TopBar [OPT-IN]
+- [ ] Lightbox
+- [ ] Prefetch CSS
+- [x] Dark Mode ✅ (via DaisyUI)
+
 ===
 
 Start from here, it's just a reference, not a TODO list
