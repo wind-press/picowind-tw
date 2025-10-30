@@ -40,7 +40,6 @@ see https://picostrap.com/
 - [x] Hide unnecessary tags
 - [x] Disable Comments
 - [x] Keeps your head clean
-- [ ] Blank Child Theme Provided ❌ (not needed, this is already a child theme, and safe to modify)
 - [ ] Sharing Buttons [OPT-IN] - WIP
 - [ ] TopBar [OPT-IN]
 - [x] Lightbox

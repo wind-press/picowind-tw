@@ -2,33 +2,35 @@
 
 declare(strict_types=1);
 
-namespace Picowind\Child\Tw\Compat\Optin;
+namespace Picowind\Child\Tw\Features;
 
 use Picowind\Core\Discovery\Attributes\Hook;
 use Picowind\Core\Discovery\Attributes\Service;
 
 /**
- * Opt-in Lightbox Feature
+ * Alpine.js Integration
  *
  * This feature is disabled by default, but can be enabled by adding the following line to snippet or your theme's functions.php file:
  * ```php
- * add_filter('f!picowind-tw/compat/optin:lightbox', '__return_true');
+ * add_filter('f!picowind-tw/features:alpine', '__return_true');
  * ```
  *
- * @link https://github.com/livecanvas-team/picostrap5/blob/master/inc/opt-in/lightbox.php
+ * Integrates Alpine.js for adding reactive and declarative behavior to your markup.
+ *
+ * @link https://alpinejs.dev/
  */
 #[Service]
-class Lightbox
+class Alpine
 {
     private bool $enabled;
 
     public function __construct()
     {
-        $this->enabled = apply_filters('f!picowind-tw/compat/optin:lightbox', false);
+        $this->enabled = apply_filters('f!picowind-tw/features:alpine', false);
     }
 
-    #[Hook('wp_footer', type: 'action', priority: 20)]
-    public function picostrap_optin_lightbox(): void
+    #[Hook('wp_head', type: 'action', priority: 10)]
+    public function enqueue_alpine_script(): void
     {
         if (!$this->enabled) {
             return;
@@ -38,6 +40,6 @@ class Lightbox
             return;
         }
 
-        \Picowind\render('compat/optin/lightbox.twig');
+        \Picowind\render('features/alpine-script.twig');
     }
 }

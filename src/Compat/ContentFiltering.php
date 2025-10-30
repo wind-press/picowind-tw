@@ -13,7 +13,7 @@ use Picowind\Core\Discovery\Attributes\Service;
  *
  * This feature is enabled by default, but can be disabled by adding the following line to snippet or your theme's functions.php file:
  * ```php
- * add_filter('f!picostrap/compat/content_filtering', '__return_false');
+ * add_filter('f!picowind-tw/compat/content_filtering', '__return_false');
  * ```
  *
  * @link https://github.com/livecanvas-team/picostrap5/blob/master/inc/content-filtering.php
@@ -25,7 +25,7 @@ class ContentFiltering
 
     public function __construct()
     {
-        $this->enabled = apply_filters('f!picostrap/compat/content_filtering', true);
+        $this->enabled = apply_filters('f!picowind-tw/compat/content_filtering', true);
     }
 
     #[Hook('wp', type: 'action', priority: PHP_INT_MAX)]

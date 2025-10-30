@@ -2,33 +2,35 @@
 
 declare(strict_types=1);
 
-namespace Picowind\Child\Tw\Compat\Optin;
+namespace Picowind\Child\Tw\Features;
 
 use Picowind\Core\Discovery\Attributes\Hook;
 use Picowind\Core\Discovery\Attributes\Service;
 
 /**
- * Opt-in Lightbox Feature
+ * Glaze.js Integration
  *
  * This feature is disabled by default, but can be enabled by adding the following line to snippet or your theme's functions.php file:
  * ```php
- * add_filter('f!picowind-tw/compat/optin:lightbox', '__return_true');
+ * add_filter('f!picowind-tw/features:glaze', '__return_true');
  * ```
  *
- * @link https://github.com/livecanvas-team/picostrap5/blob/master/inc/opt-in/lightbox.php
+ * Integrates Glaze.js - a utility-based animation framework built on GSAP with Tailwind-style syntax.
+ *
+ * @link https://glaze.dev/
  */
 #[Service]
-class Lightbox
+class Glaze
 {
     private bool $enabled;
 
     public function __construct()
     {
-        $this->enabled = apply_filters('f!picowind-tw/compat/optin:lightbox', false);
+        $this->enabled = apply_filters('f!picowind-tw/features:glaze', false);
     }
 
     #[Hook('wp_footer', type: 'action', priority: 20)]
-    public function picostrap_optin_lightbox(): void
+    public function enqueue_glaze_script(): void
     {
         if (!$this->enabled) {
             return;
@@ -38,6 +40,6 @@ class Lightbox
             return;
         }
 
-        \Picowind\render('compat/optin/lightbox.twig');
+        \Picowind\render('features/glaze-script.twig');
     }
 }

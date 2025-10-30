@@ -2,3 +2,7 @@
  * Getting Started with Picowind default preset
  */
 @import "./presets/daisyui.css";
+
+.newtext {
+    color: blue;
+}

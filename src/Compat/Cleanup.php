@@ -12,7 +12,7 @@ use Picowind\Core\Discovery\Attributes\Service;
  *
  * This feature is enabled by default, but can be disabled by adding the following line to snippet or your theme's functions.php file:
  * ```php
- * add_filter('f!picostrap/compat/cleanup:head_cleanup', '__return_false');
+ * add_filter('f!picowind-tw/compat/cleanup:head_cleanup', '__return_false');
  * ```
  *
  * @link https://github.com/livecanvas-team/picostrap5/blob/master/inc/clean-head.php
@@ -24,7 +24,7 @@ class Cleanup
 
     public function __construct()
     {
-        $this->enabled = apply_filters('f!picostrap/compat/cleanup:head_cleanup', true);
+        $this->enabled = apply_filters('f!picowind-tw/compat/cleanup:head_cleanup', true);
     }
 
     #[Hook('init', type: 'action')]
@@ -207,13 +207,13 @@ class Cleanup
      * Disable Contact Form 7 CSS - optional.
      * Can be enabled by adding the following line to snippet or your theme's functions.php file:
      * ```php
-     * add_filter('f!picostrap/compat/cleanup:disable_cf7_css', '__return_true');
+     * add_filter('f!picowind-tw/compat/cleanup:disable_cf7_css', '__return_true');
      * ```
      */
     #[Hook('wp_print_styles', type: 'action', priority: 100)]
     public function disable_cf7_css(): void
     {
-        if (!apply_filters('f!picostrap/compat/cleanup:disable_cf7_css', false)) {
+        if (!apply_filters('f!picowind-tw/compat/cleanup:disable_cf7_css', false)) {
             return;
         }
 

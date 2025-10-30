@@ -16,6 +16,12 @@ use stdClass;
 #[Service]
 class ThemeMod
 {
+    #[Hook('init', type: 'action', priority: 20)]
+    public function init(): void
+    {
+        // error_log('ThemeMod init called');
+    }
+
     #[Hook('f!picowind/context', type: 'filter', priority: 20)]
     public function add_theme_mods_to_context(array $context): array
     {
@@ -50,8 +56,13 @@ class ThemeMod
         return $context;
     }
 
-    #[Hook('f!picostrap/compat/optin:lightbox', type: 'filter', priority: 20)]
-    public function enable_lightbox_feature(bool $enabled): bool
+    #[Hook('f!picowind-tw/compat/optin:lightbox', type: 'filter', priority: 20)]
+    #[Hook('f!picowind-tw/compat/optin:disable-comments', type: 'filter', priority: 20)]
+    #[Hook('f!picowind-tw/features:dotlottie', type: 'filter', priority: 20)]
+    #[Hook('f!picowind-tw/features:rive', type: 'filter', priority: 20)]
+    #[Hook('f!picowind-tw/features:alpine', type: 'filter', priority: 20)]
+    #[Hook('f!picowind-tw/features:glaze', type: 'filter', priority: 20)]
+    public static function enable_features(bool $enabled): bool
     {
         return true;
     }

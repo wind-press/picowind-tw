@@ -12,7 +12,7 @@ use Picowind\Core\Discovery\Attributes\Service;
  *
  * This feature is disabled by default, but can be enabled by adding the following line to snippet or your theme's functions.php file:
  * ```php
- * add_filter('f!picostrap/compat/optin:disable-xml-rpc', '__return_true');
+ * add_filter('f!picowind-tw/compat/optin:disable-xml-rpc', '__return_true');
  * ```
  *
  * @link https://github.com/livecanvas-team/picostrap5/blob/master/inc/opt-in/disable-xml-rpc.php
@@ -24,7 +24,7 @@ class DisableXmlRpc
 
     public function __construct()
     {
-        $this->enabled = apply_filters('f!picostrap/compat/optin:disable-xml-rpc', false);
+        $this->enabled = apply_filters('f!picowind-tw/compat/optin:disable-xml-rpc', false);
     }
 
     #[Hook('xmlrpc_enabled', type: 'filter', priority: 10)]
